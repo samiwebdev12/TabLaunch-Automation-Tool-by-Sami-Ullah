@@ -6,7 +6,7 @@ opener for Windows.
 ## 🌐 Live
 
 - **Site:** <https://tablaunch.vercel.app>
-- **Repo:** <https://github.com/samiwebdev12/TabLunch>
+- **Repo:** <https://github.com/samiwebdev12/TabLaunch-Automation-Tool-by-Sami-Ullah>
 
 ## Project structure
 
