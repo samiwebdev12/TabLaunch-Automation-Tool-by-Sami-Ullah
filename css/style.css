@@ -1,10 +1,6 @@
-/* ============================================================
-   TabLaunch — website stylesheet
-   Design inspired by code.visualstudio.com (download page)
-   Responsive: full-viewport hero, works on all screen sizes.
-   ============================================================ */
+/* TabLaunch site styles, VS Code download-page look */
 
-/* ---------- design tokens ---------- */
+/* colors & sizes */
 :root {
   --background: #0d1014;
   --foreground: #e2e2e2;
@@ -40,7 +36,7 @@ html[data-theme="light"] {
   --glow: rgba(0, 120, 212, 0.18);
 }
 
-/* ---------- base ---------- */
+/* base styles */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -63,7 +59,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* keep anchored sections clear of the sticky navbar */
 [id] { scroll-margin-top: calc(var(--navbar-h) + 12px); }
 
-/* ---------- announcement banner ---------- */
+/* announcement banner */
 .updates-banner {
   position: relative;
   height: var(--banner-h);
@@ -112,7 +108,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 .updates-banner .dismiss-btn:hover { background: var(--card-hover); color: var(--foreground); }
 
-/* ---------- navbar ---------- */
+/* navbar */
 .navbar-fixed-container {
   position: sticky;
   top: 0;
@@ -198,7 +194,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 .navbar-fixed-container.nav-open .navbar-toggle .bar:nth-child(2) { opacity: 0; }
 .navbar-fixed-container.nav-open .navbar-toggle .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ---------- buttons ---------- */
+/* buttons */
 .link-button {
   display: inline-flex;
   align-items: center;
@@ -224,7 +220,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 }
 .link-button:active { transform: translateY(1px); }
 
-/* ---------- theme toggle ---------- */
+/* light/dark toggle */
 .theme-switch {
   display: inline-flex;
   align-items: center;
@@ -244,7 +240,7 @@ html:not([data-theme="light"]) .theme-switch .icon-moon { display: none; }
 html[data-theme="light"] .theme-switch .icon-sun { display: none; }
 html[data-theme="light"] .theme-switch .icon-moon { display: block; }
 
-/* ---------- hero (full viewport) ---------- */
+/* hero — fills the screen */
 header.hero {
   display: flex;
   align-items: center;
@@ -255,7 +251,7 @@ header.hero {
 }
 header.hero .container { width: 100%; }
 
-/* when the announcement banner is dismissed, the hero fills the full viewport below the navbar */
+/* if the banner is dismissed, let the hero fill the screen */
 html.banner-hidden header.hero {
   min-height: calc(100vh - var(--navbar-h));
   min-height: calc(100svh - var(--navbar-h));
@@ -310,7 +306,7 @@ header.hero p.lead {
   color: var(--foreground-muted);
 }
 
-/* ---------- download swimlane ---------- */
+/* download section */
 .swimlane {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -373,7 +369,7 @@ header.hero p.lead {
 
 .terms { text-align: center; color: var(--foreground-muted); font-size: 13.5px; padding: 18px 0 6px; }
 
-/* ---------- callout section ---------- */
+/* two callout boxes */
 .callout-swimlane { padding: 44px 0; }
 .callout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .callout-box {
@@ -386,7 +382,7 @@ header.hero p.lead {
 .callout-box h2 { margin: 0 0 8px; font-size: 21px; font-weight: 650; color: var(--foreground-intense); }
 .callout-box p { margin: 0; color: var(--foreground-muted); font-size: 15px; }
 
-/* ---------- sections ---------- */
+/* content sections */
 section { padding: 60px 0; }
 section h2.section-title {
   text-align: center;
@@ -468,13 +464,13 @@ section h2.section-title {
 .privacy ul li { margin: 7px 0; }
 .privacy ul strong { color: var(--foreground); }
 
-/* ---------- cta ---------- */
+/* bottom download button */
 .cta { text-align: center; padding: 26px 0 84px; }
 .cta h2 { margin: 0 0 26px; font-size: 27px; color: var(--foreground-intense); }
 .cta .link-button { flex-direction: column; gap: 2px; padding: 16px 34px; font-size: 17px; }
 .cta .link-button small { font-size: 12px; font-weight: 500; opacity: 0.88; display: block; margin-top: 2px; }
 
-/* ---------- footer ---------- */
+/* footer */
 footer {
   border-top: 1px solid var(--border);
   padding: 34px 0 42px;
@@ -497,7 +493,7 @@ footer .links a:hover { color: var(--link); }
 footer p.made-for { color: var(--foreground-muted); font-size: 13px; margin: 14px 0 0; opacity: 0.85; }
 footer p.made-for strong { color: var(--foreground); font-weight: 650; opacity: 1; }
 
-/* ---------- responsive: tablet / mobile ---------- */
+/* tablet + mobile */
 @media (max-width: 992px) {
   :root {
     --navbar-h: 62px;
@@ -535,7 +531,7 @@ footer p.made-for strong { color: var(--foreground); font-weight: 650; opacity: 
   .app-logo { width: 150px; height: 150px; border-radius: 32px; }
   .app-logo img { border-radius: 27px; }
 
-  /* callouts stack */
+  /* stack the callouts */
   .callout-grid { grid-template-columns: 1fr; }
 
   /* smaller sections */
@@ -577,12 +573,12 @@ footer p.made-for strong { color: var(--foreground); font-weight: 650; opacity: 
   footer .links { gap: 6px 14px; }
 }
 
-/* short screens (e.g. landscape phones): don't force full-viewport hero */
+/* short screens: hero takes its natural height */
 @media (max-height: 700px) and (max-width: 992px) {
   header.hero { min-height: auto; padding: 44px 0 52px; }
 }
 
-/* accessibility: respect reduced-motion preference */
+/* respect reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *,

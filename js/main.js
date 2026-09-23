@@ -1,10 +1,6 @@
-/* ============================================================
-   TabLaunch — website scripts
-   Loaded synchronously in <head> so the theme is applied
-   before first paint (no flash of the wrong theme).
-   ============================================================ */
+/* set the theme before the page paints */
 
-/* ---------- theme: apply saved/system preference ---------- */
+/* pick saved or system theme */
 (function applyInitialTheme() {
   function setTheme(themeName) {
     if (themeName === 'light') {
@@ -27,9 +23,9 @@
   setTheme(theme);
 })();
 
-/* ---------- everything else once the DOM is ready ---------- */
+/* run the rest after the page is ready */
 document.addEventListener('DOMContentLoaded', function () {
-  /* --- announcement banner: restore dismissal + rotate messages --- */
+  /* top banner: restore dismissal + rotate messages */
   var banner = document.querySelector('.updates-banner');
   if (banner) {
     var version = banner.getAttribute('data-announcement-version');
@@ -91,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* --- theme toggle --- */
+  /* theme toggle */
   var themeToggle = document.getElementById('theme-toggle');
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
@@ -114,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* --- mobile navbar (hamburger menu) --- */
+  /* mobile hamburger menu */
   var navToggle = document.getElementById('navbar-toggle');
   var navContainer = document.querySelector('.navbar-fixed-container');
   var navMenu = document.getElementById('nav-menu');
